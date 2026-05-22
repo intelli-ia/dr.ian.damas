@@ -57,8 +57,8 @@ export default function WhyChoose() {
               <div className="relative bg-primary/20" style={{ height: "140px" }}>
                 <Image src={b.image} alt={b.alt} fill className="object-cover" />
               </div>
-              <div className="bg-white p-4 flex-1 flex items-center" style={{ minHeight: "70px" }}>
-                <p className="text-primary font-semibold text-xs leading-relaxed">
+              <div className="bg-white p-4 flex-1 flex items-center" style={{ minHeight: "80px" }}>
+                <p className="text-primary font-semibold text-sm leading-relaxed">
                   {b.title}
                 </p>
               </div>

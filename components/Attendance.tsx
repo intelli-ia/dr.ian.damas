@@ -29,7 +29,7 @@ export default function Attendance() {
             <h3 className="text-lg font-bold text-primary mb-3 text-center lg:text-left">Especialidades:</h3>
             <ul className="flex flex-col gap-2 items-center lg:items-start">
               {specialties.map((s) => (
-                <li key={s} className="flex items-center gap-3 text-primary/80 text-sm">
+                <li key={s} className="flex items-center gap-3 text-primary/80 text-base">
                   <span className="w-2 h-2 rounded-full bg-tertiary flex-shrink-0" />
                   {s}
                 </li>
@@ -47,7 +47,7 @@ export default function Attendance() {
               className="flex flex-col items-center text-center gap-2 lg:gap-3 p-4 lg:p-6 border border-primary/20 rounded-sm"
             >
               <LocationIcon />
-              <p className="text-primary font-semibold text-xs lg:text-sm leading-snug">
+              <p className="text-primary font-semibold text-sm lg:text-base leading-snug">
                 {loc}
               </p>
             </div>
