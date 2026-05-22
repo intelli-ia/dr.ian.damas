@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { FloatingPaths } from "@/components/ui/background-paths";
 
-const WHATSAPP_LINK = "https://wa.me/5521999999999";
+const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
 export default function Hero() {
   return (

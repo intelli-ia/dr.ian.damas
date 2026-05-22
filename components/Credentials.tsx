@@ -3,7 +3,7 @@
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowCard } from "@/components/ui/spotlight-card";
 
-const WHATSAPP_LINK = "https://wa.me/5521999999999";
+const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
 const cards = [
   {

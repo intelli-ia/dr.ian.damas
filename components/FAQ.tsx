@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ShinyButton } from "@/components/ui/shiny-button";
 
-const WHATSAPP_LINK = "https://wa.me/5521999999999";
+const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
 const faqs = [
   {
