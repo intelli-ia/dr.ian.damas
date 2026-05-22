@@ -28,23 +28,21 @@ const benefits = [
   },
 ];
 
-// Duplicamos os cards para o loop ser contínuo e sem saltos
 const loopedBenefits = [...benefits, ...benefits];
 
 export default function WhyChoose() {
   return (
-    <section className="bg-secondary py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-14">
-        <h2 className="text-3xl lg:text-4xl font-bold text-primary text-center">
+    <section className="bg-secondary py-12 lg:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8 lg:mb-14">
+        <h2 className="text-2xl lg:text-4xl font-bold text-primary text-center">
           Por que escolher o{" "}
           <span className="text-tertiary">Dr. Ian Damas:</span>
         </h2>
       </div>
 
-      {/* Faixa infinita */}
       <div className="overflow-hidden">
         <div
-          className="flex gap-6"
+          className="flex gap-4 lg:gap-6"
           style={{
             width: "max-content",
             animation: "marquee 22s linear infinite",
@@ -54,18 +52,13 @@ export default function WhyChoose() {
             <div
               key={i}
               className="flex flex-col rounded-sm overflow-hidden shadow-md flex-shrink-0"
-              style={{ width: "280px" }}
+              style={{ width: "220px" }}
             >
-              <div className="relative bg-primary/20" style={{ height: "180px" }}>
-                <Image
-                  src={b.image}
-                  alt={b.alt}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative bg-primary/20" style={{ height: "140px" }}>
+                <Image src={b.image} alt={b.alt} fill className="object-cover" />
               </div>
-              <div className="bg-white p-5 flex-1 flex items-center" style={{ minHeight: "80px" }}>
-                <p className="text-primary font-semibold text-sm leading-relaxed">
+              <div className="bg-white p-4 flex-1 flex items-center" style={{ minHeight: "70px" }}>
+                <p className="text-primary font-semibold text-xs leading-relaxed">
                   {b.title}
                 </p>
               </div>
