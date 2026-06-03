@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { FloatingPaths } from "@/components/ui/background-paths";
-import { trackGenerateLead } from "@/lib/gtag";
+import { trackGenerateLead, trackGoogleAdsConversion } from "@/lib/gtag";
 
 const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
@@ -36,7 +36,7 @@ export default function Hero() {
           </p>
           <ShinyButton
             href={WHATSAPP_LINK}
-              onClick={trackGenerateLead}
+              onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-tertiary text-primary px-4 py-1.5 w-fit"
@@ -80,7 +80,7 @@ export default function Hero() {
             </p>
             <ShinyButton
               href={WHATSAPP_LINK}
-              onClick={trackGenerateLead}
+              onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-tertiary text-primary px-10 py-5 w-fit"

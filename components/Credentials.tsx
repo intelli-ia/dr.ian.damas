@@ -2,7 +2,7 @@
 
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import { trackGenerateLead } from "@/lib/gtag";
+import { trackGenerateLead, trackGoogleAdsConversion } from "@/lib/gtag";
 
 const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
@@ -54,7 +54,7 @@ export default function Credentials() {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={trackGenerateLead}
+            onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
             className="bg-tertiary text-primary px-4 py-1.5 lg:px-10 lg:py-4"
           >
             <span className="flex items-center gap-3">

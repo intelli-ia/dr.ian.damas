@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { trackGenerateLead } from "@/lib/gtag";
+import { trackGenerateLead, trackGoogleAdsConversion } from "@/lib/gtag";
 
 const WHATSAPP_LINK = "https://wa.me/5521975178377";
 
@@ -46,7 +46,7 @@ export default function FAQ() {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackGenerateLead}
+              onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
               className="bg-tertiary text-primary px-4 py-1.5 rounded-full w-fit lg:px-7 lg:py-3"
             >
               <span className="flex items-center gap-2">
