@@ -74,6 +74,7 @@ export const ShinyButton: React.FC<ShinyButtonProps> = ({
         href={href}
         target={target}
         rel={rel}
+        onClick={onClick}
         {...(animationProps as any)}
         className={baseClass}
       >
