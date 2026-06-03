@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { GlowCard } from "@/components/ui/spotlight-card";
 import { trackGenerateLead, trackGoogleAdsConversion } from "@/lib/gtag";
@@ -10,14 +11,20 @@ const cards = [
   {
     title: "Liderança em trauma abdominal",
     description: "Chefias em plantões críticos, decisões sob pressão real.",
+    image: "/images/WhatsApp Image 2025-04-28 at 12.04.29 2.png",
+    alt: "Liderança médica em trauma abdominal",
   },
   {
     title: "Formação de excelência",
     description: "Especialista em cirurgias digestivas complexas.",
+    image: "/images/hero-2.jpg",
+    alt: "Formação médica de excelência",
   },
   {
     title: "Reconhecimento e mídia",
     description: "Esteve na Globo e em portais médicos como fonte de confiança.",
+    image: "/images/globo-studio.avif",
+    alt: "Estúdio de produção virtual da TV Globo",
   },
 ];
 
@@ -27,6 +34,7 @@ export default function Credentials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <h2 className="text-2xl lg:text-4xl font-bold text-secondary text-center mb-8 lg:mb-14">
           Experiência que vai{" "}
+          <br className="lg:hidden" />
           <span className="text-tertiary">além do consultório</span>
         </h2>
 
@@ -34,16 +42,38 @@ export default function Credentials() {
           {cards.map((card) => (
             <div key={card.title}>
               {/* Mobile */}
-              <div className="md:hidden bg-secondary/10 border border-secondary/20 rounded-sm p-6 flex flex-col gap-3">
-                <CheckIcon />
-                <h3 className="text-secondary font-bold text-base leading-snug">{card.title}</h3>
-                <p className="text-secondary/70 text-sm leading-relaxed">{card.description}</p>
+              <div className="md:hidden bg-secondary/10 border border-secondary/20 rounded-sm overflow-hidden flex flex-col">
+                <div className="relative h-44 w-full">
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 flex flex-col gap-3">
+                  <CheckIcon />
+                  <h3 className="text-secondary font-bold text-base leading-snug">{card.title}</h3>
+                  <p className="text-secondary/70 text-sm leading-relaxed">{card.description}</p>
+                </div>
               </div>
               {/* Desktop */}
-              <GlowCard glowColor="orange" className="hidden md:flex flex-col gap-4 p-8 border-secondary/20">
-                <CheckIcon />
-                <h3 className="text-secondary font-bold text-lg leading-snug">{card.title}</h3>
-                <p className="text-secondary/70 text-sm leading-relaxed">{card.description}</p>
+              <GlowCard glowColor="orange" className="hidden md:flex flex-col border-secondary/20 p-0">
+                <div className="relative h-48 w-full rounded-t-xl overflow-hidden flex-shrink-0">
+                  <Image
+                    src={card.image}
+                    alt={card.alt}
+                    fill
+                    sizes="33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-4 p-8">
+                  <CheckIcon />
+                  <h3 className="text-secondary font-bold text-lg leading-snug">{card.title}</h3>
+                  <p className="text-secondary/70 text-sm leading-relaxed">{card.description}</p>
+                </div>
               </GlowCard>
             </div>
           ))}
@@ -59,7 +89,7 @@ export default function Credentials() {
           >
             <span className="flex items-center gap-3">
               <WhatsAppIcon />
-              Agendar Consulta
+              Agende sua consulta e esclareça suas dúvidas
             </span>
           </ShinyButton>
         </div>

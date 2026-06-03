@@ -1,67 +1,56 @@
-import Image from "next/image";
-
 const benefits = [
   {
-    title: "Menos dor, menos tempo de internação, recuperação mais rápida",
-    image: "/images/benefit-3.jpg",
-    alt: "Paciente satisfeita com a recuperação",
+    heading: "Recuperação Rápida",
+    body: "Menos dor, menos tempo de internação, recuperação mais rápida",
   },
   {
-    title: "Indicação cirúrgica apenas quando realmente necessário",
-    image: "/images/benefit-2.jpg",
-    alt: "Médico confiante com estetoscópio",
+    heading: "Indicação Precisa",
+    body: "Indicação cirúrgica apenas quando realmente necessário",
   },
   {
-    title: "Atendimento direto com o cirurgião — do diagnóstico ao pós-operatório",
-    image: "/images/benefit-4.jpg",
-    alt: "Médica em atendimento",
+    heading: "Do Início ao Fim",
+    body: "Atendimento direto com o cirurgião — do diagnóstico ao pós-operatório",
   },
   {
-    title: "Formação sólida, com atuação clínica e acadêmica reconhecida",
-    image: "/images/benefit-1.jpg",
-    alt: "Equipe cirúrgica experiente em sala de operação",
+    heading: "Excelência Comprovada",
+    body: "Formação sólida, com atuação clínica e acadêmica reconhecida",
   },
   {
-    title: "Cirurgias minimamente invasivas (videolaparoscopia)",
-    image: "/images/benefit-5.jpg",
-    alt: "Cirurgiões realizando procedimento minimamente invasivo",
+    heading: "Mínima Invasão",
+    body: "Cirurgias minimamente invasivas (videolaparoscopia)",
   },
 ];
 
-const loopedBenefits = [...benefits, ...benefits];
-
 export default function WhyChoose() {
   return (
-    <section className="bg-secondary py-12 lg:py-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8 lg:mb-14">
-        <h2 className="text-2xl lg:text-4xl font-bold text-primary text-center">
+    <section className="bg-secondary py-12 lg:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <h2 className="text-2xl lg:text-4xl font-bold text-primary text-center mb-10 lg:mb-16">
           Por que escolher o{" "}
+          <br className="lg:hidden" />
           <span className="text-tertiary">Dr. Ian Damas:</span>
         </h2>
-      </div>
 
-      <div className="overflow-hidden">
-        <div
-          className="flex gap-4 lg:gap-6"
-          style={{
-            width: "max-content",
-            animation: "marquee 22s linear infinite",
-          }}
-        >
-          {loopedBenefits.map((b, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5">
+          {benefits.map((b, i) => (
             <div
               key={i}
-              className="flex flex-col rounded-sm overflow-hidden shadow-md flex-shrink-0"
-              style={{ width: "220px" }}
+              className={`bg-primary rounded-sm p-8 lg:p-10 flex flex-col gap-6 lg:col-span-2 ${
+                i === 3 ? "lg:col-start-2" : ""
+              }`}
             >
-              <div className="relative bg-primary/20" style={{ height: "140px" }}>
-                <Image src={b.image} alt={b.alt} fill className="object-cover" />
+              <div className="flex items-center gap-3">
+                <span className="text-tertiary font-bold text-sm tracking-[0.2em]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1 h-px bg-tertiary/30" />
               </div>
-              <div className="bg-white p-4 flex-1 flex items-center" style={{ minHeight: "80px" }}>
-                <p className="text-primary font-semibold text-sm leading-relaxed">
-                  {b.title}
-                </p>
-              </div>
+              <h3 className="text-tertiary font-bold text-xl lg:text-2xl leading-snug">
+                {b.heading}
+              </h3>
+              <p className="text-secondary/70 font-medium text-sm leading-relaxed flex-1">
+                {b.body}
+              </p>
             </div>
           ))}
         </div>
