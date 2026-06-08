@@ -12,14 +12,14 @@ export default function Home() {
     <main>
       {/* 1 — dark */}
       <Hero />
-      {/* 2 — light */}
-      <WhyChoose />
-      {/* 3 — dark */}
-      <Credentials />
-      {/* 4 — light */}
-      <Attendance />
-      {/* 5 — dark */}
+      {/* 2 — dark */}
       <Testimonials />
+      {/* 3 — light */}
+      <WhyChoose />
+      {/* 4 — dark */}
+      <Credentials />
+      {/* 5 — light */}
+      <Attendance />
       {/* 6 — light */}
       <About />
       {/* 7 — dark */}

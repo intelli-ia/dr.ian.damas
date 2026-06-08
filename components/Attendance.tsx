@@ -68,22 +68,22 @@ export default function Attendance() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="bg-secondary py-12 lg:py-24">
+    <section className="bg-primary py-12 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Título */}
         <div className="text-center mb-10 lg:mb-16">
-          <h2 className="text-2xl lg:text-4xl font-bold text-primary">
+          <h2 className="text-2xl lg:text-4xl font-bold text-secondary">
             Atendimento em ambiente{" "}
             <span className="text-tertiary">clínico e hospitalar</span>
           </h2>
-          <p className="text-primary/60 text-sm lg:text-base mt-3 max-w-xl mx-auto">
+          <p className="text-secondary/60 text-sm lg:text-base mt-3 max-w-xl mx-auto">
             Entenda os principais sinais de alerta e como a abordagem do Dr. Ian Damas pode beneficiar o seu caso.
           </p>
         </div>
 
         {/* Especialidades */}
-        <div className="flex flex-col divide-y divide-primary/15 border border-primary/15 rounded-sm mb-14 lg:mb-20">
+        <div className="flex flex-col divide-y divide-secondary/15 border border-secondary/15 rounded-sm mb-14 lg:mb-20">
           {specialties.map((s, i) => (
             <div key={i}>
               <button
@@ -91,7 +91,7 @@ export default function Attendance() {
                 className="w-full flex items-center gap-4 px-5 py-5 lg:px-7 lg:py-6 text-left group"
               >
                 <span className="text-tertiary flex-shrink-0">{s.icon}</span>
-                <span className="text-primary font-bold text-sm lg:text-base flex-1 group-hover:text-tertiary transition-colors">
+                <span className="text-secondary font-bold text-sm lg:text-base flex-1 group-hover:text-tertiary transition-colors">
                   {s.name}
                 </span>
                 <span className="text-tertiary text-xl flex-shrink-0 ml-2">
@@ -110,7 +110,7 @@ export default function Attendance() {
                     style={{ overflow: "hidden" }}
                   >
                     <div className="px-5 pb-8 lg:px-7 lg:pb-10">
-                      <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-primary/10 border-t border-primary/10 pt-6">
+                      <div className="grid grid-cols-1 lg:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x divide-secondary/10 border-t border-secondary/10 pt-6">
                         {[
                           { label: "Sintomas comuns", text: s.symptoms },
                           { label: "Por que tratar logo", text: s.importance },
@@ -121,7 +121,7 @@ export default function Attendance() {
                               <div className="w-3 h-px bg-tertiary flex-shrink-0" />
                               <p className="text-tertiary font-semibold text-xs uppercase tracking-[0.15em]">{item.label}</p>
                             </div>
-                            <p className="text-primary/60 text-sm leading-relaxed">{item.text}</p>
+                            <p className="text-secondary/60 text-sm leading-relaxed">{item.text}</p>
                           </div>
                         ))}
                       </div>
@@ -134,13 +134,13 @@ export default function Attendance() {
         </div>
 
         {/* Locais */}
-        <h3 className="text-xl lg:text-2xl font-bold text-primary text-center mb-8 lg:mb-10">
+        <h3 className="text-xl lg:text-2xl font-bold text-secondary text-center mb-8 lg:mb-10">
           Onde o Dr. Ian <span className="text-tertiary">atende:</span>
         </h3>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {locations.map((loc, i) => (
-            <div key={i} className="bg-primary rounded-sm p-7 flex flex-col gap-4">
+            <div key={i} className="bg-secondary/10 rounded-sm p-7 flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <span className="text-tertiary font-bold text-sm tracking-[0.2em]">
                   {String(i + 1).padStart(2, "0")}

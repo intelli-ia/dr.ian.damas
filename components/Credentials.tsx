@@ -23,8 +23,8 @@ const cards = [
   {
     title: "Reconhecimento e mídia",
     description: "Esteve na Globo e em portais médicos como fonte de confiança.",
-    image: "/images/globo-studio.avif",
-    alt: "Estúdio de produção virtual da TV Globo",
+    image: "/images/tve-estudio-a.jpg",
+    alt: "Dr. Ian Damas em estúdio de TV",
   },
 ];
 
