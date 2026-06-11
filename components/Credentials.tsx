@@ -85,7 +85,7 @@ export default function Credentials() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
-            className="bg-tertiary text-primary px-4 py-1.5 lg:px-10 lg:py-4"
+            className="bg-green-600 text-white px-4 py-1.5 lg:px-10 lg:py-4"
           >
             <span className="flex items-center gap-3">
               <WhatsAppIcon />

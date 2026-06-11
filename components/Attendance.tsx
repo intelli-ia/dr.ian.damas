@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
 const specialties = [
@@ -46,21 +47,27 @@ const locations = [
     name: "Consultório Particular",
     area: "Centro, Rio de Janeiro",
     description: "Consultas eletivas, avaliações e acompanhamento pós-operatório em ambiente confortável e reservado.",
+    image: "/images/location-consultorio.jpg",
   },
   {
     name: "Hospital Estadual Getúlio Vargas",
     area: "Penha, Rio de Janeiro",
     description: "Referência em cirurgias de urgência e trauma abdominal — onde Dr. Ian lidera equipes em casos críticos.",
+    image: "/images/location-getulio-vargas.png",
+    mapsUrl: "https://maps.app.goo.gl/A2ktLEWmcsJvjHs27",
   },
   {
     name: "Hospital Estadual Alberto Torres",
     area: "São Gonçalo, RJ",
     description: "Atendimento hospitalar de excelência para cirurgias eletivas e de urgência.",
+    image: "/images/location-alberto-torres.webp",
+    mapsUrl: "https://share.google/bRUKo74fNXAjjJSUB",
   },
   {
     name: "Cirurgias Eletivas e de Urgência",
     area: "Infraestrutura completa",
     description: "Estrutura hospitalar para procedimentos de rotina e emergências, com equipe especializada disponível.",
+    image: "/images/location-cirurgias.png",
   },
 ];
 
@@ -140,15 +147,48 @@ export default function Attendance() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {locations.map((loc, i) => (
-            <div key={i} className="bg-secondary/10 rounded-sm p-7 flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <span className="text-tertiary font-bold text-sm tracking-[0.2em]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="flex-1 h-px bg-tertiary/30" />
+            <div key={i} className="bg-secondary/10 rounded-sm overflow-hidden flex flex-col">
+              {/* Caixa de imagem */}
+              <div className="w-full h-52 bg-secondary/20 relative overflow-hidden border-b border-secondary/10">
+                {loc.image ? (
+                  <Image
+                    src={loc.image}
+                    alt={loc.name}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-secondary/30 text-xs tracking-widest uppercase">Imagem</span>
+                  </div>
+                )}
               </div>
-              <h4 className="text-tertiary font-bold text-base lg:text-lg leading-snug">{loc.name}</h4>
-              <p className="text-secondary/65 text-sm leading-relaxed">{loc.description}</p>
+
+              {/* Conteúdo */}
+              <div className="p-7 flex flex-col gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="text-tertiary font-bold text-sm tracking-[0.2em]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="flex-1 h-px bg-tertiary/30" />
+                </div>
+                <h4 className="text-tertiary font-bold text-base lg:text-lg leading-snug">{loc.name}</h4>
+                <p className="text-secondary/65 text-sm leading-relaxed">{loc.description}</p>
+                {loc.mapsUrl && (
+                  <a
+                    href={loc.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-white bg-green-600 border border-green-600 rounded-sm px-4 py-2 hover:bg-green-700 hover:border-green-700 transition-colors self-start"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    Ver no Google Maps
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>

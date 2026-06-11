@@ -39,7 +39,7 @@ export default function Hero() {
               onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tertiary text-primary px-4 py-1.5 w-fit"
+            className="bg-green-600 text-white px-4 py-1.5 w-fit"
           >
             <span className="flex items-center gap-2">
               <WhatsAppIcon />
@@ -83,7 +83,7 @@ export default function Hero() {
               onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-tertiary text-primary px-10 py-5 w-fit"
+              className="bg-green-600 text-white px-10 py-5 w-fit"
             >
               <span className="flex items-center gap-3">
                 <WhatsAppIcon size={20} />

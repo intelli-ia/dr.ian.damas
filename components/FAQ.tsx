@@ -47,7 +47,7 @@ export default function FAQ() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => { trackGenerateLead(); trackGoogleAdsConversion(); }}
-              className="bg-tertiary text-primary px-4 py-1.5 rounded-full w-fit lg:px-7 lg:py-3"
+              className="bg-green-600 text-white px-4 py-1.5 rounded-full w-fit lg:px-7 lg:py-3"
             >
               <span className="flex items-center gap-2">
                 <WhatsAppIcon />
