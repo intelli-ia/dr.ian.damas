@@ -48,6 +48,7 @@ const locations = [
     area: "Centro, Rio de Janeiro",
     description: "Consultas eletivas, avaliações e acompanhamento pós-operatório em ambiente confortável e reservado.",
     image: "/images/location-consultorio.jpg",
+    mapsUrl: "https://www.google.com/maps/place/R.+Des.+Izidro+-+Tijuca,+Rio+de+Janeiro+-+RJ,+20521-160/@-22.9235152,-43.2316245,15.61z/data=!4m6!3m5!1s0x997e159d49557b:0x7987b6b17e569b49!8m2!3d-22.9283107!4d-43.2337096!16s%2Fg%2F1ymswzjrl?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     name: "Hospital Estadual Getúlio Vargas",
@@ -141,7 +142,7 @@ export default function Attendance() {
         </div>
 
         {/* Locais */}
-        <h3 className="text-xl lg:text-2xl font-bold text-secondary text-center mb-8 lg:mb-10">
+        <h3 className="text-2xl lg:text-4xl font-bold text-secondary text-center mb-8 lg:mb-10">
           Onde o Dr. Ian <span className="text-tertiary">atende:</span>
         </h3>
 
